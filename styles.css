@@ -21,7 +21,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop') center/cover fixed;
-    opacity: 0.05;
+    opacity: 0.08;
     z-index: -1;
 }
 
@@ -32,15 +32,15 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.8) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.9) 100%);
     z-index: -1;
 }
 
 /* Announcement Bar */
 .announcement-bar {
-    background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+    background: linear-gradient(90deg, #667eea, #764ba2, #f59e0b, #667eea);
     background-size: 200% 100%;
-    animation: gradientShift 3s ease-in-out infinite;
+    animation: gradientShift 4s ease-in-out infinite;
     color: white;
     padding: 0.5rem 0;
     position: fixed;
@@ -48,6 +48,7 @@ body::after {
     width: 100%;
     z-index: 1001;
     overflow: hidden;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
 }
 
 @keyframes gradientShift {
@@ -57,14 +58,15 @@ body::after {
 
 .announcement-content {
     white-space: nowrap;
-    animation: scroll 30s linear infinite;
+    animation: scroll 45s linear infinite;
 }
 
 .announcement-text {
     display: inline-block;
     padding-left: 100%;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 @keyframes scroll {
@@ -86,7 +88,7 @@ body::after {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -110,23 +112,23 @@ body::after {
     font-size: 1.8rem;
     font-weight: 700;
     color: #667eea;
-    animation: logoFloat 4s ease-in-out infinite;
+    animation: logoFloat 3s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-8px) scale(1.05); }
+    0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+    50% { transform: translateY(-5px) scale(1.03) rotate(2deg); }
 }
 
 .logo i {
     font-size: 2rem;
-    animation: logoSpin 6s linear infinite;
+    animation: logoSpin 4s linear infinite;
     background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: logoSpin 6s linear infinite, gradientShift 3s ease-in-out infinite;
+    animation: logoSpin 4s linear infinite, gradientShift 3s ease-in-out infinite;
 }
 
 @keyframes logoSpin {
@@ -144,13 +146,13 @@ body::after {
     color: #1f2937;
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     position: relative;
 }
 
 .nav-menu a:hover {
     color: #667eea;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .nav-menu a::after {
@@ -161,7 +163,7 @@ body::after {
     width: 0;
     height: 2px;
     background: #667eea;
-    transition: width 0.1s ease;
+    transition: width 0.2s ease;
 }
 
 .nav-menu a:hover::after {
@@ -173,12 +175,12 @@ body::after {
     color: white !important;
     padding: 0.5rem 1rem !important;
     border-radius: 50px !important;
-    transition: all 0.1s ease !important;
+    transition: all 0.2s ease !important;
 }
 
 .help-btn:hover {
     background: #1da851 !important;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
@@ -194,7 +196,7 @@ body::after {
     border-radius: 50px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     background: transparent;
     color: #1f2937;
     border: 2px solid #667eea;
@@ -209,7 +211,7 @@ body::after {
 
 .pickup-btn:hover {
     background: linear-gradient(135deg, #059669, #047857);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
 }
 
@@ -217,7 +219,7 @@ body::after {
     background: #ef4444;
     color: white;
     border-color: #ef4444;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
 }
 
@@ -225,7 +227,7 @@ body::after {
     background: #667eea;
     color: white;
     border-color: #667eea;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
@@ -259,12 +261,12 @@ body::after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: titlePulse 3s ease-in-out infinite, gradientShift 4s ease-in-out infinite;
+    animation: titlePulse 2s ease-in-out infinite, gradientShift 3s ease-in-out infinite;
 }
 
 @keyframes titlePulse {
-    0%, 100% { transform: scale(1) rotateX(0deg); }
-    50% { transform: scale(1.03) rotateX(5deg); }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
 }
 
 .hero p {
@@ -288,14 +290,14 @@ body::after {
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     font-size: 1.1rem;
 }
 
 .cta-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
 
@@ -323,47 +325,47 @@ body::after {
     position: absolute;
     color: rgba(102, 126, 234, 0.2);
     font-size: 2rem;
-    animation: float 3s ease-in-out infinite;
+    animation: float 2s ease-in-out infinite;
 }
 
 .floating-elements i:nth-child(1) {
     top: 20%;
     left: 10%;
     animation-delay: 0s;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
 }
 
 .floating-elements i:nth-child(2) {
     top: 60%;
     right: 10%;
     animation-delay: 1s;
-    animation-duration: 2.5s;
+    animation-duration: 2s;
 }
 
 .floating-elements i:nth-child(3) {
     bottom: 20%;
     left: 50%;
     animation-delay: 2s;
-    animation-duration: 3s;
+    animation-duration: 2.5s;
 }
 
 .floating-elements i:nth-child(4) {
     top: 40%;
     left: 80%;
     animation-delay: 1.5s;
-    animation-duration: 2.8s;
+    animation-duration: 2.2s;
 }
 
 .floating-elements i:nth-child(5) {
     bottom: 40%;
     right: 30%;
     animation-delay: 0.5s;
-    animation-duration: 3.2s;
+    animation-duration: 2.8s;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-    50% { transform: translateY(-40px) rotate(180deg) scale(1.2); }
+    50% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
 }
 
 /* Tracking Section */
@@ -382,12 +384,12 @@ body::after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: trackingPulse 3s ease-in-out infinite;
+    animation: trackingPulse 2s ease-in-out infinite;
 }
 
 @keyframes trackingPulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.9; transform: scale(1.02); }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
 }
 
 .tracking-form {
@@ -405,7 +407,7 @@ body::after {
     background: white;
     color: #1f2937;
     font-size: 1rem;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .tracking-form input:focus {
@@ -422,12 +424,12 @@ body::after {
     color: white;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .tracking-form button:hover {
     background: #5a67d8;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .tracking-result {
@@ -442,7 +444,7 @@ body::after {
 
 .tracking-result.show {
     display: block;
-    animation: slideIn 0.2s ease;
+    animation: slideIn 0.3s ease;
 }
 
 @keyframes slideIn {
@@ -478,14 +480,14 @@ body::after {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     border: 2px solid transparent;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
 
 .service-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-5px) scale(1.01);
     border-color: #667eea;
     box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
     background: rgba(255, 255, 255, 1);
@@ -498,12 +500,12 @@ body::after {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
-    animation: iconPulse 2s ease-in-out infinite;
+    animation: iconPulse 1.5s ease-in-out infinite;
 }
 
 @keyframes iconPulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.05); }
 }
 
 .service-card h3 {
@@ -521,6 +523,7 @@ body::after {
     padding: 80px 0;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
+    text-align: center;
 }
 
 .why-choose-section h2 {
@@ -538,6 +541,9 @@ body::after {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .benefit-card {
@@ -545,13 +551,13 @@ body::after {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -564,12 +570,12 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: iconFloat 3s ease-in-out infinite;
+    animation: iconFloat 2s ease-in-out infinite;
 }
 
 @keyframes iconFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
 }
 
 .benefit-icon i {
@@ -598,6 +604,8 @@ body::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .fleet-item {
@@ -605,12 +613,12 @@ body::after {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .fleet-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -664,14 +672,14 @@ body::after {
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
 
 .contact-item:hover {
     background: rgba(255, 255, 255, 1);
-    transform: translateX(10px) scale(1.02);
+    transform: translateX(5px) scale(1.01);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -744,7 +752,7 @@ body::after {
     width: 90%;
     max-width: 400px;
     position: relative;
-    animation: modalSlideIn 0.2s ease;
+    animation: modalSlideIn 0.3s ease;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -761,12 +769,12 @@ body::after {
     font-size: 1.5rem;
     color: #6b7280;
     cursor: pointer;
-    transition: color 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .close:hover {
     color: #1f2937;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .modal h2 {
@@ -792,7 +800,7 @@ body::after {
     backdrop-filter: blur(10px);
     color: #1f2937;
     font-size: 1rem;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .modal input:focus {
@@ -810,12 +818,12 @@ body::after {
     color: white;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .modal button:hover {
     background: linear-gradient(135deg, #5a67d8, #6b46c1);
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-1px) scale(1.01);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
@@ -830,7 +838,7 @@ body::after {
     color: #10b981;
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .bypass-link:hover {
@@ -875,7 +883,7 @@ body::after {
 .footer-section ul li a {
     color: #9ca3af;
     text-decoration: none;
-    transition: color 0.1s ease;
+    transition: color 0.2s ease;
 }
 
 .footer-section ul li a:hover {
@@ -904,7 +912,7 @@ body::after {
     height: 3px;
     background: #1f2937;
     margin: 3px 0;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 /* Responsive Design */
@@ -930,7 +938,7 @@ body::after {
         background: rgba(255, 255, 255, 0.98);
         width: 100%;
         text-align: center;
-        transition: 0.1s;
+        transition: 0.2s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         backdrop-filter: blur(10px);
         padding: 2rem 0;
@@ -1044,7 +1052,7 @@ body::after {
     border: 3px solid #e5e7eb;
     border-radius: 50%;
     border-top-color: #667eea;
-    animation: spin 0.5s ease-in-out infinite;
+    animation: spin 0.8s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -1090,15 +1098,15 @@ html {
 
 /* Enhanced animations */
 .service-card, .contact-item, .stat-card {
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .btn {
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .nav-link {
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 /* Responsive background */
@@ -1122,7 +1130,7 @@ html {
     background: white;
     color: #1f2937;
     font-size: 1rem;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .city-search-input:focus {

@@ -113,7 +113,7 @@ function openWhatsApp() {
 // Request Pickup
 function requestPickup() {
     const phoneNumber = '+919876543210';
-    const message = 'Hello! I would like to request a pickup for my package. Please provide me with the details and schedule.';
+    const message = 'Hello! I would like to request a pickup for my package from FastTrack Courier Services. Please provide me with the details and schedule.';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }

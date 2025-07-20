@@ -455,16 +455,17 @@ const citySearchStyles = `
     .city-search-input {
         width: 100%;
         padding: 0.75rem;
-        border: 2px solid #374151;
+        border: 2px solid rgba(102, 126, 234, 0.2);
         border-radius: 8px;
-        background: #1f2937;
-        color: #e4e4e7;
-        transition: all 0.1s ease;
+        background: rgba(255, 255, 255, 0.9);
+        color: #1f2937;
+        transition: all 0.2s ease;
     }
     
     .city-search-input:focus {
         outline: none;
         border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
     
     .city-dropdown {
@@ -475,22 +476,24 @@ const citySearchStyles = `
         z-index: 1000;
         max-height: 200px;
         overflow-y: auto;
-        border: 2px solid #374151;
+        border: 2px solid rgba(102, 126, 234, 0.2);
         border-top: none;
         border-radius: 0 0 8px 8px;
-        background: #1f2937;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
     
     .city-option {
         padding: 0.75rem;
         cursor: pointer;
-        border-bottom: 1px solid #374151;
-        color: #e4e4e7;
-        transition: background-color 0.1s ease;
+        border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        color: #1f2937;
+        transition: background-color 0.2s ease;
     }
     
     .city-option:hover {
-        background: #374151;
+        background: rgba(102, 126, 234, 0.1);
     }
     
     .city-option:last-child {
@@ -503,6 +506,7 @@ const citySearchStyles = `
         background: rgba(16, 185, 129, 0.1);
         border: 1px solid #10b981;
         border-radius: 8px;
+        backdrop-filter: blur(10px);
     }
     
     .receipt-option .btn {
