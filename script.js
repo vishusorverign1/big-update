@@ -104,8 +104,16 @@ function initializeAnimations() {
 
 // WhatsApp integration
 function openWhatsApp() {
-    const phoneNumber = '+919876543210'; // Replace with actual WhatsApp number
-    const message = 'Hello! I need help with courier services.';
+    const phoneNumber = '+919876543210';
+    const message = 'Hello! I need help with FastTrack courier services.';
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// Request Pickup
+function requestPickup() {
+    const phoneNumber = '+919876543210';
+    const message = 'Hello! I would like to request a pickup for my package. Please provide me with the details and schedule.';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
@@ -291,6 +299,7 @@ function displayTrackingResult(data) {
                 <p><strong>To:</strong> ${data.to_city}</p>
                 <p><strong>Status:</strong> <span class="status ${data.status}">${data.status.toUpperCase()}</span></p>
                 <p><strong>Expected Delivery:</strong> ${data.delivery_date}</p>
+                ${data.delivery_person ? `<p><strong>Delivery Person:</strong> ${data.delivery_person}</p>` : ''}
             </div>
             <div class="tracking-history">
                 <h4>Tracking History</h4>
@@ -432,12 +441,15 @@ const additionalStyles = `
     .tracking-details {
         margin: 1rem 0;
         padding: 1rem;
-        background: #111;
+        background: rgba(248, 250, 252, 0.9);
+        backdrop-filter: blur(10px);
         border-radius: 10px;
+        border: 1px solid rgba(102, 126, 234, 0.2);
     }
     
     .tracking-details p {
         margin: 0.5rem 0;
+        color: #1f2937;
     }
     
     .status {
@@ -449,7 +461,7 @@ const additionalStyles = `
     
     .status.pending {
         background: #f59e0b;
-        color: #000;
+        color: #fff;
     }
     
     .status.in_transit {
@@ -474,7 +486,7 @@ const additionalStyles = `
         top: 0;
         bottom: 0;
         width: 2px;
-        background: #374151;
+        background: linear-gradient(to bottom, #667eea, #764ba2);
     }
     
     .timeline-item {
@@ -489,19 +501,28 @@ const additionalStyles = `
         width: 1rem;
         height: 1rem;
         border-radius: 50%;
-        background: #3b82f6;
-        border: 3px solid #1f2937;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border: 3px solid #fff;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
     }
     
     .timeline-content {
         padding: 0.5rem 1rem;
-        background: #111;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
         border-radius: 8px;
         margin-left: 0.5rem;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .timeline-content p {
+        color: #1f2937;
+        margin: 0.25rem 0;
     }
     
     .timeline-content small {
-        color: #a1a1aa;
+        color: #6b7280;
     }
 `;
 
